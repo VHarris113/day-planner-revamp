@@ -1,12 +1,13 @@
 // Setting the time in the header
-var time = moment().format("MMM Do YYYY, h:mm:ss a");
+var time = moment().format("MMM Do YYYY")
+// var time = moment().format("MMM Do YYYY, h:mm:ss a");
 $("#currentDay").text(time);
 
 // This feature updates the time in real time
-var update = function() {
-    document.getElementById("currentDay").innerHTML = moment().format("MMM Do YYYY, h:mm:ss a");
-};
-setInterval(update, 1000);
+// var update = function() {
+//     document.getElementById("currentDay").innerHTML = moment().format("MMM Do YYYY, h:mm:ss a");
+// };
+// setInterval(update, 1000);
 
 // Begin a function using jQuery syntax
 $(document).ready(function() {
@@ -27,13 +28,17 @@ $(document).ready(function() {
     // call the function
     colorUpdater();
 
+    // another way to keep time updated
+    var interval = setInterval(colorUpdater, 15000);
+
+
+    // need the saved data from local storage
+    $("").val(localStorage.getItem(""));
+
+    $("#currentDay").text(moment().format("MMM Do YYYY"));
 });
 
-// another way to keep time updated
-var interval = setInterval(colorUpdater, 15000);
 
-// need the saved data from local storage
-$("").val(localStorage.getItem(""));
 
 
 
